@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>raylite - AI Creative Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;700&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --c-dark: #000000;
+        --c-brand: #ffffff;
+        --c-brand-light: #dddddd;
+        --c-accent: #ffffff;
+        --font-heading: 'Orbitron', sans-serif;
+        --font-body: 'Inter', sans-serif;
+        --font-logo: 'Poppins', sans-serif;
+
+        /* Vars for UI components - Light Mode Default */
+        --background: #ffffff;
+        --foreground: #020817;
+        --card: #ffffff;
+        --card-foreground: #020817;
+        --primary: #020817;
+        --primary-foreground: #f8fafc;
+        --muted: #f1f5f9;
+        --muted-foreground: #64748b;
+        --border: #e2e8f0;
+      }
+      html.dark {
+        /* Dark Mode Overrides for UI components */
+        --background: #000000;
+        --foreground: #f3f4f6; /* gray-100 */
+        --card: #1f2937; /* gray-800 */
+        --card-foreground: #f3f4f6; /* gray-100 */
+        --primary: #ffffff; /* white */
+        --primary-foreground: #000000; /* black */
+        --muted: #374151; /* gray-700 */
+        --muted-foreground: #d1d5db; /* gray-300 for better visibility */
+        --border: #374151; /* gray-700 */
+      }
+      body {
+        font-family: var(--font-body);
+        background-color: var(--c-dark);
+        color: #e0e0e0;
+      }
+      .font-heading { font-family: var(--font-heading); }
+      .font-logo { font-family: var(--font-logo); }
+      html, a, button, [role=button], input, textarea, select {
+        cursor: none;
+      }
+      @keyframes text-shimmer-animation {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+      .text-shimmer {
+        background: linear-gradient(
+          90deg,
+          #ffffff 40%,
+          #bbbbbb 50%,
+          #ffffff 60%
+        );
+        background-size: 200% auto;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        animation: text-shimmer-animation 4s linear infinite;
+      }
+      
+      /* Added for interactive hero section */
+      @keyframes slow-spin {
+        from { transform: translate(-50%, -50%) rotate(0deg); }
+        to { transform: translate(-50%, -50%) rotate(360deg); }
+      }
+      @keyframes slow-spin-reverse {
+        from { transform: translate(-50%, -50%) rotate(0deg); }
+        to { transform: translate(-50%, -50%) rotate(-360deg); }
+      }
+      .animate-slow-spin {
+        animation: slow-spin 150s linear infinite;
+      }
+      .animate-slow-spin-reverse {
+        animation: slow-spin-reverse 200s linear infinite;
+      }
+      .bg-radial-gradient-purple {
+        background-image: radial-gradient(ellipse at center, rgba(147, 51, 234, 0.2) 0%, rgba(147, 51, 234, 0) 60%);
+        filter: blur(80px);
+      }
+      .bg-radial-gradient-cyan {
+        background-image: radial-gradient(ellipse at center, rgba(34, 211, 238, 0.15) 0%, rgba(34, 211, 238, 0) 60%);
+        filter: blur(60px);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^11.3.8",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.417.0",
+    "motion": "https://aistudiocdn.com/motion@^12.23.19"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
